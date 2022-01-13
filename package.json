@@ -36,7 +36,7 @@
   "homepage": "https://baleada.netlify,com",
   "sideEffects": false,
   "devDependencies": {
-    "@baleada/prepare": "^0.5.17",
+    "@baleada/prepare": "^0.5.19",
     "@types/node": "^17.0.8",
     "dotenv": "^11.0.0",
     "esbuild": "^0.14.11",
