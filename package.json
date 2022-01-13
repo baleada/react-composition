@@ -1,0 +1,56 @@
+{
+  "name": "@baleada/react-composition",
+  "version": "0.0.0",
+  "description": "Functions that expose Baleada Logic for composition in React.",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    "import": "./lib/index.js"
+  },
+  "scripts": {
+    "src": "node -r esbuild-register scripts/src.ts",
+    "prepare": "npm run src && tsc && rollup --config rollup.config.ts",
+    "test:only": "run() { uvu -r esbuild-register tests/$2 $1.test.js$; }; run",
+    "test": "npm run test:only ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baleada/react-composition.git"
+  },
+  "keywords": [
+    "baleada",
+    "react",
+    "composition function",
+    "hook"
+  ],
+  "author": {
+    "name": "Alex Vipond",
+    "email": "hello@alexvipond.dev",
+    "url": "https://alexvipond.dev"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baleada/react-composition/issues"
+  },
+  "homepage": "https://baleada.netlify,com",
+  "sideEffects": false,
+  "devDependencies": {
+    "@baleada/prepare": "^0.5.17",
+    "@types/node": "^17.0.8",
+    "dotenv": "^11.0.0",
+    "esbuild": "^0.14.11",
+    "esbuild-register": "^3.3.2",
+    "rollup": "^2.63.0",
+    "typescript": "^4.5.4",
+    "uvu": "^0.5.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.7",
+    "@baleada/logic": "^0.20.31",
+    "@types/react": "^17.0.38",
+    "@vue-reactivity/watch": "^0.1.6",
+    "@vue/reactivity": "^3.2.26",
+    "react": "^17.0.2"
+  }
+}
