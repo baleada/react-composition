@@ -10,7 +10,7 @@
   },
   "scripts": {
     "src": "node -r esbuild-register scripts/src.ts",
-    "prepare": "npm run src && tsc && node -r esbuild-register scripts/prepare.ts",
+    "prepare": "npm run src && tsc && rollup --config rollup.config.ts --configPlugin typescript",
     "test:only": "run() { uvu -r esbuild-register tests/$2 $1.test.js$; }; run",
     "test": "npm run test:only ."
   },
@@ -36,7 +36,7 @@
   "homepage": "https://baleada.netlify,com",
   "sideEffects": false,
   "devDependencies": {
-    "@baleada/prepare": "^0.5.19",
+    "@baleada/prepare": "^0.5.20",
     "@types/node": "^17.0.8",
     "dotenv": "^11.0.0",
     "esbuild": "^0.14.11",
