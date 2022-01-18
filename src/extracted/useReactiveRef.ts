@@ -13,7 +13,7 @@ export function useReactiveRef (logic: Record<any, any>) {
         () => forceUpdate()
       )
     },
-    [reactiveRef] // React won't detect its changes and won't run the effect again
+    []
   )
 
   return reactiveRef
