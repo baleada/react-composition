@@ -45,7 +45,7 @@ function toClassCompositionFunction ({
   const instance = new ${name}${genericsWithoutExtends}(${state}, options)
   const reactiveInstance = useReactiveRef(instance)
 `,
-        cleanup = needsCleanup ? '  useEffect(() => reactiveInstance.current.stop(), [])\n' : ''
+        cleanup = needsCleanup ? '  useEffect(() => () => reactiveInstance.current.stop(), [])\n' : ''
 
   return `\
 export function use${name}${generics} (${state}: ${stateType}, options?: ${name}Options${optionsGenerics}): MutableRefObject<${name}${genericsWithoutExtends}> {

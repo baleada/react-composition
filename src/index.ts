@@ -7,7 +7,7 @@ import type { AnimateableKeyframe, AnimateableOptions, AnimateableStatus, Animat
 export function useAnimateable (keyframes: AnimateableKeyframe[], options?: AnimateableOptions): MutableRefObject<Animateable> {
   const instance = new Animateable(keyframes, options)
   const reactiveInstance = useReactiveRef(instance)
-  useEffect(() => reactiveInstance.current.stop(), [])
+  useEffect(() => () => reactiveInstance.current.stop(), [])
   return reactiveInstance as unknown as MutableRefObject<Animateable>
 }
 
@@ -20,14 +20,14 @@ export function useCompleteable (string: string, options?: CompleteableOptions):
 export function useCopyable (string: string, options?: CopyableOptions): MutableRefObject<Copyable> {
   const instance = new Copyable(string, options)
   const reactiveInstance = useReactiveRef(instance)
-  useEffect(() => reactiveInstance.current.stop(), [])
+  useEffect(() => () => reactiveInstance.current.stop(), [])
   return reactiveInstance as unknown as MutableRefObject<Copyable>
 }
 
 export function useDelayable (effect: DelayableEffect, options?: DelayableOptions): MutableRefObject<Delayable> {
   const instance = new Delayable(effect, options)
   const reactiveInstance = useReactiveRef(instance)
-  useEffect(() => reactiveInstance.current.stop(), [])
+  useEffect(() => () => reactiveInstance.current.stop(), [])
   return reactiveInstance as unknown as MutableRefObject<Delayable>
 }
 
@@ -64,7 +64,7 @@ export function useGrantable<DescriptorType extends PermissionDescriptor> (descr
 export function useListenable<Type extends ListenableSupportedType, RecognizeableMetadata extends Record<any, any> = Record<any, any>> (type: Type, options?: ListenableOptions<Type, RecognizeableMetadata>): MutableRefObject<Listenable<Type, RecognizeableMetadata>> {
   const instance = new Listenable<Type, RecognizeableMetadata>(type, options)
   const reactiveInstance = useReactiveRef(instance)
-  useEffect(() => reactiveInstance.current.stop(), [])
+  useEffect(() => () => reactiveInstance.current.stop(), [])
   return reactiveInstance as unknown as MutableRefObject<Listenable<Type, RecognizeableMetadata>>
 }
 
