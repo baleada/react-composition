@@ -1,6 +1,6 @@
 {
   "name": "@baleada/react-composition",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Functions that expose Baleada Logic for composition in React.",
   "main": "lib/index.cjs",
   "module": "lib/index.js",
