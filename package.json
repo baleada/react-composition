@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.16.7",
-    "@baleada/logic": "^0.20.31",
+    "@baleada/logic": "^0.22.3",
     "@types/react": "^17.0.38",
     "@vue-reactivity/watch": "^0.1.6",
     "@vue/reactivity": "^3.2.26",
